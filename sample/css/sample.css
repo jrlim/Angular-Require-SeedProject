@@ -1,0 +1,22 @@
+
+html, body {height: 100%;}
+
+.viewNameArea {
+	font-size: 16px;
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.baseArea {
+	margin: 15px;
+}
+
+.mainArea {
+	margin: 15px;
+	color: #454545;
+}
+
+.ngViewArea {
+	margin: 30px;
+	color: #454545;
+}

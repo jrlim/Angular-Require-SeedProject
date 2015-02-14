@@ -1,0 +1,52 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="GnbController" style="height: 50px;">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle logout-btn-toggle-area" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!--<a class="navbar-brand" href="#/mdi"><img src="./images/logo_main.png"> {{APP_INFO.appName}}  ver {{APP_INFO.appVersion}}</a>-->
+			<a class="navbar-brand" href="#/mdi"><div><img src="./images/AngularJS-large.png" style="width: 130px;"/></div></a>
+		</div>
+		<div class="navbar-collapse collapse" style="padding-top: 5px;">
+			<ul class="nav navbar-nav navbar-left" ng-if="isLoggedIn == true">
+				<!--<li><a href="#/home">Home</a></li>-->
+				<!--<li><a href="#/aboutus">Aboutus</a></li>-->
+				<!--<li><a href="#/contactus">Contactus</a></li>-->
+				<li><a href="#/mdi">MDI</a></li>
+
+				<li role="presentation" class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+						Components <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#/grid">grid</a></li>
+						<!--<li><a href="#/code">code</a></li>-->
+						<li><a href="#/valid">validation</a></li>
+						<li><a href="#/datepicker">datepicker</a></li>
+						<li><a href="#/compare">compare</a></li>
+						<li><a href="#/modal">modal</a></li>
+						<li><a href="#/busy">busy</a></li>
+						<li><a href="#/dialog">dialog</a></li>
+					</ul>
+				</li>
+				<!--<li role="presentation" class="dropdown">-->
+					<!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">-->
+						<!--Route <span class="caret"></span>-->
+					<!--</a>-->
+					<!--<ul class="dropdown-menu" role="menu">-->
+						<!--<li><a href="#/user/list">User List</a></li>-->
+						<!--<li><a href="#/user/regist">User Regist</a></li>-->
+					<!--</ul>-->
+				<!--</li>-->
+			</ul>
+			<ul class="nav navbar-nav navbar-right logout-btn-area">
+				<li><a href="" ng-show="isLoggedIn == true">{{session.formatted}}</a></li>
+				<li><a href="#/login" ng-if="isLoggedIn == false">로그인</a></li>
+				<li><a href="" ng-if="isLoggedIn == true" ng-click="procLogout()">로그아웃</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

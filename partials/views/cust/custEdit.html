@@ -1,0 +1,54 @@
+
+<!-- content set for CustEdit page -->
+<div class="modal-header">
+	<h3>{{title}}</h3>
+</div>
+
+<form name="form" ng-submit="submit()">
+
+	<!-- {rNum: '14', userId:'baekdae', userName: '백대영', address:'경기도 부천시 원미구', hpNumber:'010-1111-1312', company:'알앤비'}, -->
+	<div class="modal-body">
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label for="userId" class="col-sm-2 control-label">아이디</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="person.userId" class="form-control" id="userId" placeholder="사용자 아이디" ng-required="true">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="userName" class="col-sm-2 control-label">이름</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="person.userName" class="form-control" id="userName" placeholder="이름" ng-required="true" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="address" class="col-sm-2 control-label">주소</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="person.address" class="form-control" id="address" placeholder="주소" ng-required="true" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="hpNumber" class="col-sm-2 control-label">연락처</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="person.hpNumber" class="form-control" id="hpNumber" placeholder="연락처" ng-required="true" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="company" class="col-sm-2 control-label">이름</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="person.company" class="form-control" id="company" placeholder="회사" ng-required="true" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="button" class="btn btn-danger" ng-click="cancel()" >Cancel</button>
+				<button type="submit" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+	</div>
+
+</form>

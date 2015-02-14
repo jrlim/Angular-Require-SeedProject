@@ -1,0 +1,17 @@
+<div ng-controller="EventController">
+	<div class="viewNameArea">{{::viewName}}</div>
+	상위 scope <tt>MyEvent</tt> count: {{count}}
+	<ul>
+		<li ng-repeat="i in [1]" ng-controller="EventController">
+			<button ng-click="$emit('MyEvent')">$emit('MyEvent')</button>
+			<button ng-click="$broadcast('MyEvent')">$broadcast('MyEvent')</button>
+			<br>
+			중간 scope <tt>MyEvent</tt> count: {{count}}
+			<ul>
+				<li ng-repeat="item in [1, 2, 3]" ng-controller="EventController">
+					- 하위 scope <tt>MyEvent</tt> count: {{count}}
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,41 @@
+<!-- content set for userDetail page -->
+
+<div ng-controller="CustDetailController">
+	<div style="font-size: 32px">
+		<h4>User Detail</h4>
+		<h2 class="label label-info">{{user.message}}</h2>
+		<h2 class="label label-info">{{hiMessage}}</h2>
+	</div>
+
+	<div class="ajaxTestTable">
+		<h4>사용자 상세보기</h4>
+
+		<div>{{ userDetail }}</div>
+
+		<div class="userDetailArea">
+			<div class="valueArea">
+				아이디 :
+				<span ng-model="userDetail.userId">{{ userDetail.userId }}</span>
+			</div>
+			<div class="valueArea">
+				이름 :
+				<span ng-model="userDetail.userName">{{ userDetail.userName }}</span>
+			</div>
+			<div class="valueArea">
+				주소 :
+				<span ng-model="userDetail.address">{{ userDetail.address }}</span>
+			</div>
+			<div class="valueArea">
+				연락처 :
+				<span ng-model="userDetail.hpNumber">{{ userDetail.hpNumber }}</span>
+			</div>
+			<div class="valueArea">
+				회사 :
+				<span ng-model="userDetail.company">{{ userDetail.company }}</span>
+			</div>
+		</div>
+
+		<button type="button" class="btn btn-primary" ng-click="btnMoveUserEdit()">수정</button>
+	</div>
+
+</div>

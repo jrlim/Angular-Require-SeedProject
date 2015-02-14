@@ -1,0 +1,36 @@
+<!-- content set for home page -->
+<div ng-controller="SnbController">
+	<div>
+		<h4>SNB Area </h4>
+	</div>
+
+	<!--{{ roleList }}-->
+
+	<div class="selectedTreeModel">
+		<!--<input type="button" value="DEV TREE MODEL" data-ng-click="checkTreeMenu()" />-->
+		<!--<input type="button" value="TREE MODEL 1" data-ng-click="roleList = roleList1" />-->
+		<!--<input type="button" value="TREE MODEL 2" data-ng-click="roleList = roleList2" />-->
+	</div>
+
+	<!--<div class="selectedNodeItem">-->
+		<!--<span><b>Selected Node</b> : {{menuTree.currentNode}}</span>-->
+	<!--</div>-->
+
+	<!--
+	  [TREE attribute]
+	  angular-treeview: the treeview directive
+	  tree-id : each tree's unique id.
+	  tree-model : the tree model on $scope.
+	  node-id : each node's id
+	  node-label : each node's label
+	  node-children: each node's children
+	-->
+	<div
+			data-angular-treeview="true"
+			data-tree-id="menuTree"
+			data-tree-model="roleList"
+			data-node-id="id"
+			data-node-label="menuNm"
+			data-node-children="children" >
+	</div>
+</div>

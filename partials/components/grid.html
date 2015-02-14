@@ -1,0 +1,26 @@
+<div ng-controller="GridController">
+	<h2 class="label label-info" style="font-size: 24px">{{welcome.message}}</h2>
+
+	<h3> Pagination Grid Example</h3>
+
+	<div class="paginationGrid">
+		<div ui-grid="gridOptions1" ui-grid-selection ui-grid-pagination class="grid"></div>
+		<p>Page: {{ gridApi.pagination.getPage() }}</p>
+		<p>Total pages: {{ gridApi.pagination.getTotalPages() }}</p>
+		<button type="button" class="btn btn-info" ng-click="gridApi.pagination.previousPage()">
+			previous page
+		</button>
+		<button type="button" class="btn btn-info" ng-click="gridApi.pagination.nextPage()">
+			next page
+		</button>
+	</div>
+	<div> 선택된 row 값 : {{selectedItem}}</div>
+
+	<br/><br/><br/>
+
+	<h3> Edit PopUp Grid Example</h3>
+	<div style="margin-top: 20px;">
+		<div class="gridStyle" ui-grid="gridOptions" external-scopes="$scope" style="height: 108px;"></div>
+	</div>
+
+</div>

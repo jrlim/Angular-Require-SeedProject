@@ -1,0 +1,29 @@
+<!-- content set for MdiController page -->
+<div ng-controller="MdiController">
+
+	<h2 class="label label-info" style="font-size: 24px">{{welcome.message}}</h2>
+
+	<div class="alert" style="margin-top: 30px;">
+		<!--<div>MDI LIST : {{mdiList}}</div>-->
+		<!--<button class="btn btn-xs btn-warning" ng-click="putMdiList()"> Test View ADD </button>-->
+		<!--<button class="btn btn-xs btn-warning" ng-click="putMdiList2()"> Grid View ADD </button>-->
+
+		<ul class="nav nav-tabs">
+			<li ng-repeat="view in mdiList track by $index"
+				ng-class="{'active' : $index == isCurrentView }"
+				ng-click="changeMdiView($index)">
+
+				<a href="">{{ view.menuNm }}
+					<button class="btn btn-xs btn-default" ng-click="removeMdi($event, $index, view)">x</button>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div style="margin-top: 30px;">
+		<div ng-repeat="mdi in mdiList track by $index">
+			<div class="alert bg-success" ng-show="isCurrentView == $index" ng-include=" mdi.urlAdr "></div>
+		</div>
+	</div>
+
+</div>

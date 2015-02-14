@@ -1,0 +1,11 @@
+<div>
+	<div class="viewNameArea">{{::viewName}}</div>
+	<p>There're {{items.length}} items</p>
+	<ul>
+		<li ng-repeat="item in items">
+			<p>{{item.title}}</p>
+			<p>posted at {{item.created | date:'medium'}}</p>
+			<button ng-click="deleteItem(item)">Delete</button>
+		</li>
+	</ul>
+</div> 

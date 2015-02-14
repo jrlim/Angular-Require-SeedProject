@@ -1,0 +1,29 @@
+<!-- content set for temp page -->
+
+<div>
+	<div style="font-size: 32px">
+		<h2 class="label label-info">{{welcome.message}}</h2>
+	</div>
+
+	<h4>Temp List
+		<button type="button" class="btn btn-primary" ng-click="getUserList()">조회</button>
+	</h4>
+
+	<div class="ajaxTestTable">
+		<div>
+			<strong>Scrolling Vertically</strong> {{ gridApi.grid.isScrollingVertically }}
+			<br>
+			<strong>Scrolling Horizontally</strong> {{ gridApi.grid.isScrollingHorizontally }}
+			<br>
+
+			<!-- 사용자 Grid Table -->
+			<div ui-grid="gridOptions" ui-grid-pagination ui-grid-auto-resize external-scopes="$scope" class="grid"></div>
+
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-default" ng-click="openModal('lg')">사용자 등록</button>
+		</div>
+	</div>
+
+</div>

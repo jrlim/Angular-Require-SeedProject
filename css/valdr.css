@@ -1,0 +1,20 @@
+.valdr-message {
+	display: none;
+}
+.valdr-message.ng-valid.ng-touched.ng-dirty {
+	display: inline;
+	background: #008000;
+}
+.valdr-message.ng-dirty.ng-invalid.ng-touched {
+	display: inline;
+	color: #a94442;
+}
+.form-control {
+	border: 1px solid #ccc;
+}
+.form-group .form-control.ng-invalid.ng-dirty.ng-touched {
+	border-color: #a94442;
+}
+.form-group .form-control.ng-valid.ng-touched {
+	border-color: #029e17;
+}

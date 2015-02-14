@@ -1,0 +1,21 @@
+<!-- this file is very important it is include in main file by ng-view-->
+<div ng-controller="NestedController">
+	<div class="alert alert-info">Now below load multiple views i am from <b class="badge">uirouter.html</b> which is  set by <i class="badge"> ng-view</i>
+	</div>
+
+	<i class="badge">load home.html file by ng-include </i>
+	<br/>
+	<!-- when controller set then in scope home.template home.html set and it will load that template-->
+	<div class="alert bg-success" ng-include="template.home"></div>
+
+	<i class="badge">load aboutus.html file by ng-include </i>
+	<br/>
+	<!-- when controller set then in scope about.template aboutus.html set and it will load that template-->
+	<div class="alert bg-warning" ng-include="template.about"></div>
+
+	<i class="badge">load contactus.html file by ng-include</i>
+	<br/>
+	<!-- when controller set then in scope contact.template contactus.html set and it will load that template-->
+	<div class="alert bg-danger" ng-include="template.contact"></div>
+
+</div>

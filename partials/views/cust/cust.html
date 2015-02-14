@@ -1,0 +1,37 @@
+<!-- content set for userList page -->
+
+<div ng-controller="CustListController">
+	<div style="font-size: 32px">
+		<h4>Cust List
+			<button type="button" class="btn btn-primary" ng-click="getUserList()">조회</button>
+		</h4>
+		<h2 class="label label-info">{{cust.message}}</h2>
+	</div>
+
+	<div class="ajaxTestTable">
+
+		<div>
+			<strong>Scrolling Vertically</strong> {{ gridApi.grid.isScrollingVertically }}
+			<br>
+			<strong>Scrolling Horizontally</strong> {{ gridApi.grid.isScrollingHorizontally }}
+			<br>
+
+			<!-- 사용자 Grid Table -->
+			<div ui-grid="gridOptions" ui-grid-pagination ui-grid-auto-resize external-scopes="$scope" class="grid"></div>
+
+			<!--<p>Page: {{ gridApi.pagination.getPage() }}</p>-->
+			<!--<p>Total pages: {{ gridApi.pagination.getTotalPages() }}</p>-->
+			<!--<button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">-->
+				<!--이전-->
+			<!--</button>-->
+			<!--<button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">-->
+				<!--다음-->
+			<!--</button>-->
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-default" ng-click="openModal('lg')">사용자 등록</button>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,53 @@
+
+<div ng-controller="ValidController">
+	<h2 class="label label-info" style="font-size: 24px">{{welcome.message}}</h2>
+
+	<h2>UserVO validation 예제</h2>
+
+	<!-- Hint -->
+	<pre class="bs-example-scope"> {{validation | json}};</pre>
+	<div class="bs-example" style="padding-bottom: 24px;" append-source></div>
+
+	<div style="margin: 15px;"> 입력 정보 : {{testPerson}} </div>
+
+	<form role="form" name="userVOForm" novalidate valdr-type="UserVO">
+
+		<div valdr-form-group>
+			<label for="userId">아이디</label>
+			<input class="form-control" type="text" id="userId" name="userId" placeholder="사용자 아이디" ng-model="testPerson.userId">
+		</div>
+
+		<div valdr-form-group class="col-sm-6">
+			<label for="userName" class="col-sm-3">이름</label>
+			<input class="form-control col-sm-9" type="text" id="userName" name="userName" placeholder="사용자 이름" ng-model="testPerson.userName" style="width: 75%;">
+		</div>
+
+		<div valdr-form-group class="col-sm-6">
+			<label for="hpNumber" class="col-sm-3">연락처</label>
+			<input class="form-control col-sm-9" type="text" id="hpNumber" name="hpNumber" placeholder="연락처" ng-model="testPerson.hpNumber" style="width: 75%;">
+		</div>
+
+		<div valdr-form-group>
+			<label for="address">주소</label>
+			<input class="form-control" type="text" id="address" name="address" placeholder="주소" ng-model="testPerson.address">
+		</div>
+
+		<div valdr-form-group>
+			<label for="company">회사</label>
+			<input class="form-control" type="text" id="company" name="company" placeholder="회사" ng-model="testPerson.company">
+		</div>
+
+		<div valdr-form-group>
+			<label for="email">E-mail</label>
+			<input class="form-control" type="text" id="email" name="email" placeholder="이메일" ng-model="testPerson.email">
+		</div>
+
+		<div valdr-form-group>
+			<label for="scno">사업자번호</label>
+			<input class="form-control" type="text" id="scno" name="scno" placeholder="사업자번호" ng-model="testPerson.scno">
+		</div>
+		<button type="button" ng-disabled="userVOForm.$invalid" class="btn btn-default" ng-click="btnSave(userVOForm)">disabled/enable</button>
+		<button type="button" class="btn btn-default" ng-click="btnSave(userVOForm)">저장</button>
+	</form>
+
+</div>

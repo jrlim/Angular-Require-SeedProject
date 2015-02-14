@@ -1,0 +1,48 @@
+<div ng-controller="DatepickerController">
+
+	<h2 class="label label-info" style="font-size: 24px">{{welcome.message}}</h2>
+
+	<div style="margin-top: 30px;">
+		<pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+		<h4>Inline</h4>
+		<div style="display:inline-block; min-height:290px;">
+			<datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+		</div>
+
+		<h4>Popup</h4>
+
+		<pre>시작일 : <em>{{startDate}} , date 필터 적용 : {{startDate | date:'fullDate' }}</em></pre>
+		<pre>종료일 : <em>{{endDate}}, date 필터 적용 : {{endDate | date:'fullDate' }}</em></pre>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<p class="input-group">
+					<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="startDate" is-open="$parent.startDateOpened" min-date="1999-01-01" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabledPopup(date, mode)" ng-required="true" close-text="Close" />
+              		<span class="input-group-btn">
+                		<button type="button" class="btn btn-default" ng-click="popupStartDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              		</span>
+				</p>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<p class="input-group">
+					<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="endDate" is-open="$parent.endDateOpened" min-date="2013-06-11" max-date="'2016-12-30'" datepicker-options="dateOptions" date-disabled="disabledPopup(date, mode)" ng-required="true" close-text="닫기" />
+             		<span class="input-group-btn">
+                		<button type="button" class="btn btn-default" ng-click="popupEndDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              		</span>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label>Format:</label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
+			</div>
+		</div>
+
+		<hr />
+		<button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+		<button type="button" class="btn btn-sm btn-default" ng-click="dt = '2009-08-24'">2009-08-24</button>
+		<button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+		<button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today restriction">Min date</button>
+	</div>
+</div>

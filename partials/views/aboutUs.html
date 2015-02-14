@@ -1,0 +1,33 @@
+<!-- content set for about page -->
+<div ng-controller="AboutUsController">
+	<div style="font-size: 32px">
+		<h2 class="label label-info">{{welcome.message}}</h2>
+	</div>
+
+	<!-- $http 비동기 통신 예제 -->
+	<div class="ajaxTestTable">
+		<button type="button" class="btn btn-primary" ng-click="btnGetJsonData()">getJsonData</button>
+		<table class="table table-bordered table-stripped table-responsive table-hover" ng-show="jsonData">
+			<thead>
+			<tr class="success">
+				<th>Date</th>
+				<th>Fajr</th>
+				<th>Duhr</th>
+				<th>Asr</th>
+				<th>Maghrib</th>
+				<th>Isha</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="day in jsonData.items">
+				<td>{{day.date_for}}</td>
+				<td>{{day.fajr}}</td>
+				<td>{{day.dhuhr}}</td>
+				<td>{{day.asr}}</td>
+				<td>{{day.maghrib}}</td>
+				<td>{{day.isha}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

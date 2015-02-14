@@ -1,0 +1,80 @@
+
+<!-- 공통코드 View -->
+<div>
+	<h2 class="label label-info" style="font-size: 24px">{{welcome.message}}</h2>
+
+	<div style="margin-top: 15px;"><i class="badge" style="margin-top: 10px; background-color: #A09E9E;"> 공통코드 조회 후 ng-options에 Binding </i></div>
+
+	<div class="alert bg-warning" style="margin-top: 15px;">
+		코드 리스트 : {{ upperCodeList }}
+		<button type="button" class="btn btn-sm btn-primary" ng-click="btnCodeMngList()">전체조회</button>
+	</div>
+
+	<select name="" title="상위코드"
+			ng-change="changeUpperCode()"
+			ng-model="upperCode"
+			ng-options="UpperGroup.cdGroupId for UpperGroup in upperCodeList">
+		<option value=""> - 상위코드 선택 - </option>
+	</select>
+	<select name="" title="하위코드"
+			ng-model="lowerCode"
+			ng-options="LowerGroup as LowerGroup.dtlCdNm for LowerGroup in lowerCodeList">
+		<option value=""> - 하위코드 선택 - </option>
+	</select>
+
+	<div class="alert bg-info" style="margin-top: 30px;">
+		{{ lowerCode }}
+	</div>
+
+	<div class="alert bg-success" style="margin-top: 30px;">
+		<input type="text" ng-model="searchCodeName" placeholder="조회할 코드" ng-required="true">
+		<button type="button" class="btn btn-sm btn-primary" ng-click="btnSearchCode()">단일조회</button>
+		<div>
+			코드 조회 결과 : {{ searchResultCode }}
+		</div>
+	</div>
+
+	<div class="alert bg-default" style="margin-top: 30px;">
+		<div><h4> 코드 입력 테스트 </h4></div>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label for="userId" class="col-sm-2 control-label">function : 3606</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="userId" placeholder="" ng-required="true" ng-value="fnSearchCode('3606')">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="userName" class="col-sm-2 control-label">function : 3607</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="userName" placeholder="" ng-required="true" ng-value="fnSearchCode('3607')"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="address" class="col-sm-2 control-label">filter : 3608</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="address" placeholder="" ng-required="true" ng-value=" '3608' | GetCodeName "/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="hpNumber" class="col-sm-2 control-label">filter : 2541</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="hpNumber" placeholder="" ng-required="true" ng-value=" '2541' | GetCodeName "/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="company" class="col-sm-2 control-label">filter : 2542</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="company" placeholder="" ng-required="true" ng-value=" '2542' | GetCodeName"/>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="alert bg-default" style="margin-top: 30px;">
+		<div><h4> 그리드에서 공통코드 사용 예제 </h4></div>
+		<div style="margin-top: 20px;">
+			<div class="gridStyle" ui-grid="gridOptions" external-scopes="$scope" style="height:108px;"></div>
+		</div>
+	</div>
+
+</div>

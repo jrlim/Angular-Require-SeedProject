@@ -1,0 +1,77 @@
+
+html, body {height: 100%;}
+
+.bg-success {
+	background-color: #F9F9F9;
+}
+
+.grid {
+	margin: 15px;
+	width: 95%;
+	height: 371px;
+}
+
+.paginationGrid {
+	margin : 10px;
+}
+
+.ajaxTestTable {
+	width: 100%;
+	margin: 10px;
+}
+
+.ajaxTestTable .table{
+	width: 90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.userDetailArea {
+	margin: 20px;
+}
+.valueArea {
+	padding: 10px;
+}
+
+.btn-newTab {
+	margin-left: 5px;
+}
+
+.ngViewArea {
+	min-height: 500px;
+}
+
+.openBssfooter {
+	text-align: center;
+}
+
+
+/*	Bottom Slide Custom CSS. 임시 값이며, 실 개발시 HTML, CSS에 맞출 것		*/
+.modal-with-am-slide-bottom .modal.center .modal-dialog {
+	min-width: 90%;
+	max-width: 100%;
+	width: 90%;
+	height: 70%;
+	top: 62%;
+}
+
+.modal-with-am-slide-bottom .modal.center .modal-content {
+	height: 100%;
+}
+
+/*	$http : ngAjax indicator	*/
+.loader {
+	width:100%;
+	height:100%;
+	background-color:rgba(87,87,87,0.5);
+	position: fixed;
+	left:0;
+	top:0;
+	/* opacity:0.2; */
+	display:none;
+	z-index: 9999;
+}
+
+.loader.show {
+	display:block;
+}

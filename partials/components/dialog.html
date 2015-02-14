@@ -1,0 +1,52 @@
+
+<div style="padding-top:0px">
+
+	<h2 class="label label-info" style="font-size: 24px">{{welcome.message}}</h2>
+
+	<div class="row" style="margin-top: 15px;">
+		<div class="col-md-12">
+			<h1>다이얼로그 Demo <span class="text-muted"><p><small>(의존적인 모듈 정보 : Bootstrap 3.2.0, AngularJS 1.3.8, Angular UI Bootstrap 0.11.2, Angular-Translate)</small></p></span></h1>
+			<p>기본적인 다이얼로그 커스터마이징 예제 입니다.</p>
+		</div>
+	</div>
+
+	<div>
+		<pre class="bs-example-scope"> {{dialogExample | json}};</pre>
+		<div class="bs-example" style="padding-bottom: 24px;" append-source></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<button class="btn btn-primary" ng-click="launch('error')">Error Dialog</button>
+			<button class="btn btn-primary" ng-click="launch('customError')">Custom Error Dialog</button>
+			<button class="btn btn-default" ng-click="launch('wait')">Wait Dialog</button>
+			<button class="btn btn-default" ng-click="launch('customwait')">"Custom" Wait Dialog</button>
+			<button class="btn btn-info" ng-click="launch('notify')">Notify Dialog</button>
+			<button class="btn btn-info" ng-click="launch('customNotify')">Custom Notify Dialog</button>
+			<button class="btn btn-success" ng-click="launch('confirm')">Confirm Dialog</button>
+			<!--<button class="btn btn-warning" ng-click="launch('custom')">Custom Dialog</button>-->
+			<!--<button class="btn btn-warning" ng-click="launch('custom2')">Custom Dialog 2</button>-->
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+			<p><strong>Confirmation</strong>: {{confirmed}}</p>
+			<!--<p><strong>Name Enter (From Custom)</strong>: {{name}}</p>-->
+			<!--<p><strong>Custom 2 Value</strong>: {{custom.val}}</p>-->
+			<p><strong>Current Language</strong>: {{language}}</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<button class="btn btn-default" ng-click="setLanguage('ko-KR')">한국어</button>
+			<button class="btn btn-default" ng-click="setLanguage('en-US')">English</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<button type="button" class="btn btn-default" ng-click="procException()">Exception</button>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,75 @@
+
+<!-- Test View -->
+<div ng-controller="TestViewController" >
+	<h4>MDI View {{ currentViewNo }}</h4>
+	<h2 class="label label-info" style="font-size: 32px">{{mdi.message}}  {{ currentViewNo }}</h2>
+
+	<h5>slide</h5>
+
+	<button type="button" class="btn btn-primary" data-animation="am-slide-left" data-placement="left" bs-aside="aside">aside from left<br><small>(slide-left)</small></button>
+	<button type="button" class="btn btn-success" data-animation="am-slide-right" data-placement="right" bs-aside="aside">aside from right<br><small>(slide-right)</small></button>
+	<button type="button" class="btn btn-primary" data-animation="am-slide-top" bs-modal="modal">modal from top<br><small>(am-slide-top)</small></button>
+	<button type="button" class="btn btn-success" data-animation="am-slide-bottom" data-placement="center" bs-modal="modal">modal from bottom<br><small>(am-slide-bottom)</small></button>
+
+
+	<pre class="bs-example-scope">$scope.modal = {{modal | json}};</pre>
+	<div class="bs-example" style="padding-bottom: 24px;" append-source>
+		<!-- Button to trigger a default modal with a scope as an object {title:'', content:'', etc.} -->
+		<!--<button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal">Click to toggle modal-->
+			<!--<br />-->
+			<!--<small>(using an object)</small>-->
+		<!--</button>-->
+
+		<!--<!-- You can use a custom html template with the `data-template` attr -->-->
+		<!--<button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-slide-top" data-template="modal/docs/modal.tpl.demo.html" bs-modal="modal">Custom Modal-->
+			<!--<br />-->
+
+			<!--<small>(using data-template)</small>-->
+		<!--</button>-->
+
+	</div>
+
+
+	<!--<!-- Button to trigger a default aside with a scope as an object {title:'', content:'', etc.} -->-->
+	<!--<button type="button" class="btn btn-lg btn-primary" bs-aside="aside">Click to toggle aside-->
+		<!--<br />-->
+		<!--<small>(using an object)</small>-->
+	<!--</button>-->
+
+	<!--<!-- You can use a custom html template with the `data-template` attr -->-->
+	<!--<button type="button" class="btn btn-lg btn-danger" data-template="aside/docs/aside.tpl.demo.html" data-placement="left" data-animation="am-slide-left" bs-aside="aside" data-container="body">Custom aside-->
+		<!--<br />-->
+		<!--<small>(using data-template)</small>-->
+	<!--</button>-->
+
+
+	<!-- Modal View -->
+	<div>
+		<script type="text/ng-template" id="myModalContent.html">
+			<div class="modal-header">
+				<h3 class="modal-title">I'm a modal!</h3>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li ng-repeat="item in items">
+						<a ng-click="selected.item = item">{{ item }}</a>
+					</li>
+				</ul>
+				Selected: <b>{{ selected.item }}</b>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" ng-click="ok()">OK</button>
+				<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+			</div>
+		</script>
+
+		<button class="btn btn-default" ng-click="open()">Open me!</button>
+		<button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+		<button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+		<div ng-show="selected">Selection from a modal: {{ selected }}</div>
+	</div>
+
+</div>
+
+<!--<script src="http://mgcrea.github.io/angular-strap/scripts/docs.tpl.js" data-semver="v2.1.5"></script>-->
+<!--<script src="http://mgcrea.github.io/angular-strap/scripts/demo.tpl.js" data-semver="v2.1.5"></script>-->
