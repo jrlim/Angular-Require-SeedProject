@@ -23,7 +23,7 @@
 			<input type="text" class="form-control" placeholder="베이스컨트롤러" ng-model="baseObj.greeting">
 		</div>
 		<div class="col-sm-4">
-			<button ng-click="updateData('Broadcast Test!!!')" style="color: #444444">$broadcast 테스트</button>
+			<button ng-click="updateData($event,'Broadcast Test!!!')" style="color: #444444">$broadcast 테스트</button>
 		</div>
 	</div>
 
@@ -31,7 +31,8 @@
 
 	<div class="row">
 		<div>
-			<div class="ngViewArea bg-success" ng-view=""></div>
+			<div class="ngViewArea bg-success" ng-view="">
+			</div>
 		</div>
 	</div>
 </div>

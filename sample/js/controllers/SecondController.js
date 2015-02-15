@@ -9,7 +9,7 @@ define([
 	/**
 	 * Second 컨트롤러
 	 */
-	ngApp.controller('SecondController', function ($rootScope, $scope, $timeout) {
+	ngApp.controller('SecondController', function ($scope, $timeout) {
 		$scope.viewName = 'SecondController';
 
 		$scope.secondObj = {

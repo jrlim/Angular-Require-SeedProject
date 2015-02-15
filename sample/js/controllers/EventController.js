@@ -16,7 +16,6 @@ define([
 		$scope.$on('MyEvent', function() {
 			$scope.count++;
 		});
-
 	});
 
 });

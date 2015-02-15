@@ -5,6 +5,7 @@ define([
 
 	var sampleApp = ng.module('sampleApp', [
 		'ngRoute',
+		'ngTouch',
 		'ui.bootstrap',
 		'ui.bootstrap.tpls'
 	]);

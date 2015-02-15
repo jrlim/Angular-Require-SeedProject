@@ -7,6 +7,7 @@ requirejs.config({
 		'text'				: 'libs/requirejs-2.1.15/text.min',
 		'angular'			: 'libs/angular-1.3.8/angular',
 		'ngRoute'			: 'libs/angular-1.3.8/angular-route',
+		'ngTouch'			: 'libs/angular-1.3.8/angular-touch',
 		'ui.bootstrap'		: 'libs/angular-1.3.8/ui-bootstrap-tpls-0.12.0',
 		'underscore'		: 'libs/underscore-1.7.0/underscore-1.7.0.min'
 	},
@@ -20,6 +21,9 @@ requirejs.config({
 			exports : 'angular'
 		},
 		'ngRoute' : {
+			deps 	: ['angular']
+		},
+		'ngTouch' : {
 			deps 	: ['angular']
 		},
 		'ui.bootstrap' : {
@@ -42,6 +46,7 @@ requirejs( [
 		'angular',			//미리 선언해둔 angular path
 		'underscore',
 		'ngRoute',
+		'ngTouch',
 		'ui.bootstrap',
 		'app',				// app.js			: Angular module load
 		'routes'			// routes.js		: Route config
